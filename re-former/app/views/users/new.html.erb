@@ -1,0 +1,54 @@
+<h1>Enter User Data</h1>
+
+<%= form_for @user do |f| %>
+  <%= f.label :username, 'Enter a username:' %>
+  <%= f.text_field :username, value: 'superuser' %>
+  <br>
+
+
+  <%= f.label :email, 'Enter your email:' %>
+  <%= f.email_field :email, placeholder: 'foo@bar.com' %>
+  <br>
+
+  <%= f.label :password  %>
+  <%= f.password_field :password %>
+  <br>
+
+  <%= f.submit %>
+
+<% end %>
+
+<!--
+<%= form_tag("/users", method: 'post') do %>
+  <%= label_tag(:username, 'Enter Username:') %>
+  <%= text_field_tag(:username) %>
+  <br>
+
+  <%= label_tag(:email) %>
+  <%= email_field_tag(:email, nil, placeholder: 'foo@bar.com') %>
+  <br>
+
+  <%= label_tag(:password) %>
+  <%= password_field_tag(:password, nil, placeholder: 'secret') %>
+  <br>
+
+  <%= submit_tag('Create User') %>
+
+<% end %>
+-->
+
+<!--
+<form action='/users' method='POST' accept-charset='UTF-8'>
+  <label for='user_username'>Enter Username:</label>
+  <input type='text' name='user[username]' id='user_username'>
+  <br>
+  <label for='user_email'>Enter Email:</label>
+  <input type='email' name='user[email]' id='user_email' placeholder='foo@bar.com'>
+  <br>
+  <label for='user_password'>Enter Password</label>
+  <input type='password' name='user[password]' id='user_password' placeholder='secret'>
+  <br>
+  <input name='commit' type='submit' value='Create User'>
+  <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+</form>
+-->
