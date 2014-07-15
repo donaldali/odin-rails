@@ -1,0 +1,19 @@
+<h1>All Posts</h1>
+
+<% if signed_in? %>
+  <%= link_to "Create Post", new_post_path %> | 
+  <%= link_to "Sign Out", signout_path, method: :delete %>
+<% else %>
+  <%= link_to "Sign In", signin_path %>
+<% end %>
+
+<br>
+<%= render @posts %>
+<br>
+
+<% if signed_in? %>
+  <%= link_to "Create Post", new_post_path %> | 
+  <%= link_to "Sign Out", signout_path, method: :delete %>
+<% else %>
+  <%= link_to "Sign In", signin_path %>
+<% end %>

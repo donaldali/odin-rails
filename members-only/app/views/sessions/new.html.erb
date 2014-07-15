@@ -1,0 +1,11 @@
+<h1>Sign In</h1>
+
+<%= form_tag signin_path do %>
+  <%= label_tag :email, 'Your Email' %>
+  <%= text_field_tag :email, params[:email], autofocus: true %>
+  <br>
+  <%= label_tag :password %>
+  <%= password_field_tag :password %>
+  <br>
+  <%= submit_tag "Sign In" %>
+<% end %>
