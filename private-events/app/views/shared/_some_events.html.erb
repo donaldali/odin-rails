@@ -1,0 +1,16 @@
+<% if events.any? %>
+  <h3><%= type %></h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Creator</td>
+        <th>Event Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render events %>
+    </tbody>
+  </table>
+<% else %>
+  <h3><%= 'No ' + type %></h3>
+<% end %>

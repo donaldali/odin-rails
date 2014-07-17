@@ -1,0 +1,19 @@
+<h1>Event Details</h1>
+Creator: <%= link_to @event.creator.name, @event.creator %>
+<br>
+Description: <%= @event.description %>
+<br>
+<% if @event.attendees.any? %>
+  <h4>Attendees</h4>
+  <%= render @event.attendees %>
+<% else %>
+  <h4>No Attendees</h4>
+<% end %>
+
+<% if current_user?(@event.creator) %>
+  <h4>Not Invited</h4>
+  <% @uninvited.each do |user| %>
+    <%= user.name %> | 
+    <%= link_to "Invite", invite_path(info: { user_id: user.id, event_id: @event.id }), method: :post %> <br>
+  <% end %>
+<% end %>

@@ -1,0 +1,17 @@
+<h1>Make New User</h1>
+
+<% if @user.errors.any? %>
+  Your submission has <%= pluralize(@user.errors.count, 'error') %>.
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @user do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.submit %>
+<% end %>

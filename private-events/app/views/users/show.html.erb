@@ -1,0 +1,17 @@
+<h1>User Info</h1>
+Name: <%= @user.name %>
+<br>
+<% if @events.any? %>
+  <h3>Created Events</h3>
+  <ul>
+    <% @events.each do |event| %>
+      <div><%= link_to event.description, event %></div>
+    <% end %>
+  </ul>
+<% else %>
+  <h4>No Created Events</h4>
+<% end %>
+<br>
+
+<%= render partial: 'shared/some_events', locals: { events: @past_events,     type: 'Previously attended events' } %>
+<%= render partial: 'shared/some_events', locals: { events: @upcoming_events, type: 'Upcoming events' } %>

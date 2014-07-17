@@ -1,0 +1,11 @@
+<%= link_to "Create User", new_user_path %> | 
+<%= link_to "Events", events_path %> | 
+<% if signed_in? %>
+  Signed in as: <%= current_user.name %> | 
+  <%= link_to "Profile Page", current_user %> | 
+  <%= link_to "Create Event", new_event_path %> | 
+  <%= link_to "Sign Out", signout_path, method: :delete %>
+<% else %>
+  <%= link_to "Sign In", signin_path %>
+<% end %>
+<br>

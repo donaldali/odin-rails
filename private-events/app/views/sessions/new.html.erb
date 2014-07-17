@@ -1,0 +1,10 @@
+<h1>Sign In</h1>
+
+<%= form_tag :sessions do %>
+  <%= label_tag :name %>
+  <%= text_field_tag :name, params[:name], placeholder: "User's name" %>
+  <br>
+  <%= submit_tag 'Sign In' %>
+  <br>
+  <%= link_to 'Create new user', new_user_path %>
+<% end %>
