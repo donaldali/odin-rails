@@ -1,0 +1,8 @@
+.row
+  -photos.each do |photo|
+    - info = flickr.photos.getInfo(photo_id: photo.id)
+    .col-sm-6.col-md-4.col-lg-3
+      .thumbnail
+        = link_to(image_tag(FlickRaw.url_q(info), :class => 'flickr-photo-widget', :title => photo.title, :border => 0), FlickRaw.url_photopage(info))
+        .caption
+          %h3= photo.title
