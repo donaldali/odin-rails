@@ -1,0 +1,8 @@
+%nav.navbar.navbar-inverse{role: 'navigation'}
+  .container-fluid
+    .navbar-header
+      %h3.navbar-text Odin Kittens
+
+    %ul.nav.navbar-nav.navbar-right
+      %li= link_to "All Kittens", kittens_path
+      %li= link_to "New Kitten",  new_kitten_path

@@ -1,0 +1,16 @@
+- if kitten.errors.any?
+  %h4= "Please fix the following #{pluralize(kitten.errors.count, 'error')}."
+  %ul
+    - kitten.errors.full_messages.each do |message|
+      %li= message
+
+= simple_form_for kitten, defaults: { input_html: { class: 'form-control' }, 
+                                      label_html: { class: 'control-label' }, 
+                                      wrapper_html: { class: 'form-group' } } do |form|
+  = form.input :name
+  = form.input :age, label: 'Age (months)'
+  = form.input :cuteness, label: 'Cuteness (1 - 10)', input_html: { min: '1', max: '10' }
+  = form.input :softness, label: 'Softness (1 - 10)', input_html: { min: '1', max: '10' }
+
+  = form.submit class: 'btn btn-lg btn-info'
+  

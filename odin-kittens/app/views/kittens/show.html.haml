@@ -1,0 +1,18 @@
+%h1 Kitten Information
+
+%ul.list-group
+  %li.list-group-item
+    = "Name: #{@kitten.name}"
+  %li.list-group-item
+    = "Age: #{@kitten.age}"
+  %li.list-group-item
+    = "Cuteness: #{@kitten.cuteness}"
+  %li.list-group-item
+    = "Softness: #{@kitten.softness}"
+
+= link_to "Edit #{@kitten.name}", edit_kitten_path(@kitten), 
+                                  class: 'btn btn-lg btn-info'
+= " | "
+= link_to "Delete #{@kitten.name}", @kitten, method: :delete, 
+                                    data: { confirm: "Are you sure?" }, 
+                                    class: 'btn btn-lg btn-danger'

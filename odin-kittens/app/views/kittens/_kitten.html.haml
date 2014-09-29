@@ -1,0 +1,7 @@
+%ul.list-group-item
+  = link_to kitten.name, kitten
+  = " | "
+  = link_to "Edit", edit_kitten_path(kitten), class: "btn btn-info"
+  = " | "
+  = link_to "Delete", kitten, method: :delete, class: "btn btn-danger", 
+                              data: {confirm: "Are you sure?"}

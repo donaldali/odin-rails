@@ -1,0 +1,19 @@
+@import "bootstrap";
+
+.edit-delete {
+	margin-top: 20px;
+}
+
+nav {
+	font-size: 20px;
+}
+
+.alert-notice {
+	@extend .alert-info;
+}
+
+h1 {
+	height: 110px;
+	line-height: 110px;
+	background: url(kittens.jpg) no-repeat right;
+}
